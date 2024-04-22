@@ -15,10 +15,12 @@ namespace Tic_tac_toe_AI
 
             Game game = new Game(boardSize, winLen);*/
 
-            Game game = new Game(19, 5);
+            Game game = new Game(1, 1);
 
-            game.debug = false;
+            game.debug = true;
+            game.cheating = true;
             game.pressEnterToContinue = false;
+            game.delay = 100;
 
             game.startGame();
             //game.startGame("CompVsComp");

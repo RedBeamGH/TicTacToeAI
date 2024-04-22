@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tic_tac_toe_AI
 {
-    class Player
+    public class Player
     {
         public int type;
         public int mark;
@@ -15,22 +15,19 @@ namespace Tic_tac_toe_AI
         public int maxBreadth;
         public int maxSearchTime;
 
-        public Player(int type, int mark)
-        {
-            this.type = type;
-            this.mark = mark;
-            maxDepth = 10;
-            maxBreadth = 10;
-            maxSearchTime = 5_000; // ms
-        }
+        public string searchAlgorithm;
+        public Game.EvalFunction evalFunction;
 
-        public Player(int type, int mark, int maxDepth = 20, int maxBreadth = 8, int maxSearchTime = 2_000) : this(type, mark)
+        public Player(int type, int mark, int maxDepth = 20, int maxBreadth = 8, int maxSearchTime = 2_000,
+                    string searchAlgorithm = "alpha-beta")
         {
             this.type = type;
             this.mark = mark;
             this.maxDepth = maxDepth;
             this.maxBreadth = maxBreadth;
             this.maxSearchTime = maxSearchTime;
+            this.searchAlgorithm = searchAlgorithm;
+            this.evalFunction = Game.defaultEvalFunction;
         }
     }
 }

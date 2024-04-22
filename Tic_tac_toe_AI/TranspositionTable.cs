@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tic_tac_toe_AI
 {
-    class TranspositionTable
+    public class TranspositionTable
     {
         public ulong hash;
         public ulong[,] table;

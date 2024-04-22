@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Tic_tac_toe_AI
 {
-    class UI
+    public class ConsoleUI
     {
         const int EMPTY = 0;
         const int X = 1;
@@ -240,7 +240,6 @@ namespace Tic_tac_toe_AI
 
         public static void noShow(int[] board) 
         {
-            Console.WriteLine("<<BOARD>>");
         }
 
 
@@ -261,6 +260,7 @@ namespace Tic_tac_toe_AI
 
         public static string ConvertToMove(int move)
         {
+            if (move < 0 || move >= boardSize*boardSize) return "?";
 
             string letters = new string(' ', 1000);
 
